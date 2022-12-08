@@ -15,7 +15,106 @@
 
 <body>
     <main>
-        <h1>apapunlah</h1>
+        <div class="judul">
+
+            <h1>System Rangkaian Berbasis Mikroprosesor</h1>
+        </div>
+
+        <div class="content">
+
+
+            <div class="pendahuluan">
+                <h2>A. Pendahuluan</h2>
+                <p>Fenomena sistem control dalam pengertian keteknikan bermakna suatu sistem yang mempunyai peranti
+                    input dan ouput. Peranti input befungsi sebagai peranti penerima dari system yang dikontrol,
+                    sedangkan peranti output berfungsi sebagai pemberi aksi kepada system yang dikontrol.</p>
+                <p>Dalam praktik, terminal input maupun output system yang dikontrol dapat beroperasi pada bermacam
+                    besaran listrik maupun fisika. Besaran ini harus diterjemakna ke dalam besaran logika bila
+                    pdihubungkan ke system rangkaian berbasis mikroprosesor. Peranti penerjemah ini disebut interdace ke
+                    peranti sensor dan actuator. Peranti sensor adalah nama yang digunakan untuk menyebut peranti output
+                    dairi sistem yang dikontrol, sedangkan peranti actuator adalah peranti inputnya</p>
+                <img src="assets/gambar1.jpg" alt="">
+            </div>
+
+            <div class="minimun">
+                <h2>B. Lingkup perancangan sisitem minimun cpu z80</h2>
+                <p>Cpu z80 memiliki 8-bit data dan 16-bit alamat. Sehingga dapat dirangkai ke semua komponen memori
+                    standar. Kemampuan pengalamatan memori maksimun secara langsung adalah sebesar 64KB.</p>
+                <div class="subab">
+
+                    <div class="clock">
+
+                        <h3>1. Rangkaian clock</h3>
+                        <p>Untuk system rangkaian bebasis cpu z80, dapat menggunakan rangkaian clock yang telah
+                            terintegrasi. Chip kristal yang berbentuk mirip IC umumnya berkaki 4 buah. Di dalamnya,
+                            telah
+                            menyatu peranti-peranti analog pendukung rangkaian. Dengan menghubungkan dua buah kaki
+                            diantara
+                            ground dan vcc, output kristal ini dapat dihubungkan langusng ke pin clock cpu z80</p>
+                    </div>
+
+                    <div class="buffer">
+                        <h3>2. Cpu bus buffer </h3>
+                        <p>Bila cpu dihubungkan ke berbagai macam peripheral dengan jumlah yang banyak maka dibutuhkan
+                            sebuah buffer untuk menyokong kinerja cpu agar dapat memberikan logika yang valid. Untuk
+                            perancangan rangkaian perlu mempertimbangkan fan-in dan fan-out. </p>
+
+                        <img src="assets/gambar2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="ic-memory">
+                <h2>C. Interfacing z80 ke ic memory</h2>
+                <p>Pemilihan suatu eprom atau ram tidak didasarkan hanya pada bagaimana membuat sistem rangkaian memori
+                    selengkap mungkin tetapi juga berapa besar memori yang sebenarnya kita butuhkan untuk menyelesaikan
+                    permasalahan kontrok elektronik itu.
+                    Bila kita menggunakan eprom 27256 dan ram 62256 kita tidak perlu memasang decoder khusus untuk
+                    memeiskana kerja kedua ic memory tersebut. Cukup dengan memanfaatkan a15 pada cpu z80 yang
+                    dihubungkan ke cs masing-masing ic memory sehingga kedua memory tersebut akan bekerja pada alamat
+                    yang terpisah. 32kb pertama untuk eprom, dan 32kb kedua untuk ram.
+                </p>
+                <img src="assets/gambar3.jpg" alt="">
+            </div>
+            <div class="manipulasi">
+                <h2>D. Manipulasi control read/write untuk memory dan peranti i/o</h2>
+                <p>Proses pembacaan data yang dilakukan cpu z80 tidak saja berlaku bagi memory, tetapi juga untuk
+                    peralatan input port. Berdasarkan diagram pewaktuan read/write memory dan I/O read/write dapat
+                    dilihat bahwa pengaktifan instruksi yang menyebabkan cpu menghubungi memory (eprom maupun ram) akan
+                    mengaktifkan MREGQ dan RD atau WR sedangkan IORQ (input/output request) tidak aktif. Sebaliknya
+                    untuk proses membaca data yang berasal dari input port dengan mengeksekusi intgruksi IN, maka yang
+                    aktif adalah IORQ dan RD tetapi MREQ tidak demikian.</p>
+            </div>
+
+            <div class="interfacing">
+                <h2>E. Interfacing cpu z80 ke peranti I/O</h2>
+                <p>Pada dasarnya menghubungkan bus dari cpu z80 ke rangkaian input atau output port identic dengancara
+                    menghubungkan cp uke memori, intruksi yang dapat digunakan untuk I/O Port yaitu IN dan OUT, hanya
+                    dapat dikenakan pada alatm dari 0000H samapi 00FFH. </p>
+
+                <div class="subab">
+
+                    <div class="programmable">
+                        <h3>1. Programammble peripheral interface (PPI) 8255</h3>
+                        <p>Adalah duatu peralel I/O dalam satu chip serbaguna yang fungsi I/O dapat deprogram.
+                            Dibuat oleh intel untuk digunakan Bersama dengan mikroprosesor buatan intel.
+                        </p>
+                        <img src="assets/gambar4.jpg" alt="">
+
+                    </div>
+
+                    <div class="kePPI">
+                        <h3>2. Interfacing ke PPI 825</h3>
+                        <p>Memilih alamat kerja PPI 8255 sesuai yag diinginkan dapat dilakukan dengan merangkaikan
+                            sebuah
+                            decoder seperti gambar dibawah. </p>
+                        <img src="assets/gambar5.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </main>
 
 

@@ -1,15 +1,92 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
+:root {
+  --fontcolor: ;
+}
+
 * {
   margin: 0%;
   padding: 0%;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Poppins";
 }
 
-nav a {
-  display: flex;
-  justify-content: center;
+main {
+  margin-top: 2rem;
+}
+
+.content {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.judul {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(233, 232, 232);
+}
+
+.judul h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.pendahuluan h2,
+.minimun h2,
+.ic-memory h2,
+.manipulasi h2,
+.interfacing h2 {
+  font-size: 24px;
+}
+
+.pendahuluan img,
+.buffer img,
+.ic-memory img,
+.programmable img,
+.kePPI img {
+  width: 450px;
+  margin-bottom: 1rem;
+}
+
+.subab {
+  margin-left: 1rem;
+}
+
+.clock h3,
+.buffer h3,
+.programmable h3,
+.kePPI h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .judul h1 {
+    font-size: 25px;
+  }
+  .pendahuluan h2,
+  .minimun h2,
+  .ic-memory h2,
+  .manipulasi h2,
+  .interfacing h2 {
+    font-size: 20px;
+  }
+  .clock h3,
+  .buffer h3,
+  .programmable h3,
+  .kePPI h3 {
+    font-size: 17px;
+  }
+  .pendahuluan img,
+  .buffer img,
+  .ic-memory img,
+  .programmable img,
+  .kePPI img {
+    width: 200px;
+  }
 }
